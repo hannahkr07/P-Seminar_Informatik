@@ -18,8 +18,8 @@ nav_bar = """
     <head>
         <title>Nachhilfemanager</title>
         <style>
-            nav ul {
-                list-style-type: none;
+            nav ul {                    <!--Anlegen des Menüs für Anwendungen-->
+                list-style-type: none;  <!--Formatierung des Menüs-->
                 margin: 0;
                 padding: 0;
                 overflow: hidden;
@@ -27,10 +27,10 @@ nav_bar = """
             }
 
             nav li {
-                float: left;
+                float: left;            <!--Anordnung auf der linken Seite-->
             }
 
-            nav li a {
+            nav li a {                  <!--Textformatierung-->
                 display: block;
                 color: white;
                 text-align: center;
@@ -45,7 +45,7 @@ nav_bar = """
     </head>
     <body>
         <h1>Nachhilfemanager 🏫</h1>
-        <nav>
+        <nav>                           <!--Anlegen der Links zu Anwendungen-->
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/kontakte">Kontakte</a></li>
