@@ -12,7 +12,7 @@ messages = []
 
 app = Flask(__name__)
 
-nav_bar = """
+nav_bar = """                           <!--Navigationsleiste mit Formatierung-->
  <!DOCTYPE html>
     <html>
     <head>
@@ -57,17 +57,17 @@ nav_bar = """
     </html>
 """
 
-@app.route('/')
+@app.route('/')                          <!--Methode zum Aufrufen des Home-Bildschirms-->
 def home():
     return render_template_string(nav_bar)
 
-@app.route('/kontakte')
+@app.route('/kontakte')                  <!--Methode zum Aufrufen der Kontakte-->
 def kontakte():
     return render_template_string(nav_bar + """
 
     <h3>Lehrer</h3>
 
-<table>
+<table>                                  <!--Tabelle mit Lehrern ubnd Fächern-->
   <tr>
     <th>Herr ... </th>
     <th>Herr ... </th>
@@ -90,10 +90,10 @@ def kontakte():
     """)
 
 
-@app.route('/dateien')
+@app.route('/dateien')                  <!--Methode zum Aufrufen der Dateien-->
 def root():
     return render_template_string(nav_bar + '''
-        <html>
+        <html>                          <!--Aufrufen der versch. Dateien oder Verzeichnisse-->
           <head>
             <h3>Lernmaterialien</h3>
           </head>
