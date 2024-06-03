@@ -90,7 +90,7 @@ def kontakte():
     """)
 
 
-@app.route('/dateien')                  <!--Methode zum Aufrufen der Dateien-->
+@app.route('/dateien')                  <!--Funktion zum Aufrufen der Dateien-->
 def root():
     return render_template_string(nav_bar + '''
         <html>                          <!--Aufrufen der versch. Dateien oder Verzeichnisse-->
@@ -116,23 +116,23 @@ def root():
 
          file_list = subprocess.check_output('ls', shell=True, cwd= os.getcwd()).decode('utf8').split('\n',))
 
-@app.route('/forum', methods=['GET', 'POST'])
+@app.route('/forum', methods=['GET', 'POST'])  <!--Funktion zum Aufrufen des Forums-->
 def forum():
-    if request.method == 'POST':
+    if request.method == 'POST':        <!--Methode zum Posten von Nachrichten-->
         message = request.form['message']
         messages.append(message)
 
         return render_template_string(nav_bar + """
         <h3> Forum </h3>
         <form action="/forum" method="post">
-        <div align="left" style="width: px; height: 300px; overflow-y: auto; border: 1px solid #ccc;">
+        <div align="left" style="width: px; height: 300px; overflow-y: auto; border: 1px solid #ccc;">    <!--Informationen zu Nachrichten-->
          <div>
           {% for message in messages %}
            <p>&nbspAbsenderName: {{ message }}</p><br></br>
         {% endfor %}
           </div>
          </div>
-         <p><label>Stelle eine Frage:</label></p>
+         <p><label>Stelle eine Frage:</label></p>                <!--Menü um Frage zu stellen-->
           <textarea id="message" name="message" rows="4" cols="50"></textarea>
           <br>
           <input type="submit" value="Senden ✉️">
